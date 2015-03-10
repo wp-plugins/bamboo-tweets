@@ -141,9 +141,13 @@ Description: Bamboo Tweets provides a widget to display the latest tweets from y
 			$title = apply_filters( 'widget_title', $instance['title'] );
 
 			$path = plugins_url('', __FILE__);
-			wp_enqueue_style( 'bamboo-font-awesome',	'//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
-			wp_enqueue_style( 'bamboo-tweets', 			$path.'/bamboo-tweets.css' );
-
+			if( function_exists( 'bamboo_enqueue_style' ) ) {
+				bamboo_enqueue_style( 'bamboo-font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
+				bamboo_enqueue_style( 'bamboo-tweets', $path.'/bamboo-tweets.css' );
+			} else {
+				wp_enqueue_style( 'bamboo-font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
+				wp_enqueue_style( 'bamboo-tweets', $path.'/bamboo-tweets.css' );
+			}
 
 			echo $before_widget;
 			if ( ! empty( $title ) ) echo $before_title . $title . $after_title;
