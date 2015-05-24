@@ -1,5 +1,5 @@
 <?php
-/******************************************************************/
+/**************************************************************************************************/
 /*
 Plugin Name: Bamboo Tweets
 Plugin URI:  http://www.bamboosolutions.co.uk/wordpress/bamboo-tweets
@@ -8,23 +8,21 @@ Author URI:  http://www.bamboosolutions.co.uk
 Version:     1.0
 Description: Bamboo Tweets provides a widget to display the latest tweets from your Twitter account in a clean and simple list.
 */
-/******************************************************************/
-
-	add_action( 'widgets_init',	'bamboo_tweets_widgets_init' );
-
-/******************************************************************/
+/**************************************************************************************************/
 
 	function bamboo_tweets_widgets_init() {
 
 		register_widget('Bamboo_Tweets');
 
 	}
+	add_action( 'widgets_init',	'bamboo_tweets_widgets_init' );
 
-/******************************************************************/
+
+/**************************************************************************************************/
 
 	class bamboo_Tweets extends WP_Widget {
 
-/******************************************************************/
+/**************************************************************************************************/
 
 		public function __construct() {
 
@@ -36,7 +34,7 @@ Description: Bamboo Tweets provides a widget to display the latest tweets from y
 
 		}
 
-/******************************************************************/
+/**************************************************************************************************/
 
 	 	public function form( $instance ) {
 
@@ -115,7 +113,7 @@ Description: Bamboo Tweets provides a widget to display the latest tweets from y
 <?php
 		}
 
-/******************************************************************/
+/**************************************************************************************************/
 
 		public function update( $new_instance, $old_instance ) {
 
@@ -133,7 +131,7 @@ Description: Bamboo Tweets provides a widget to display the latest tweets from y
 
 		}
 
-/******************************************************************/
+/**************************************************************************************************/
 
 		public function widget( $args, $instance ) {
 
@@ -160,7 +158,7 @@ Description: Bamboo Tweets provides a widget to display the latest tweets from y
 
 		}
 
-/******************************************************************/
+/**************************************************************************************************/
 
 		public function echo_tweets( $username='', $count=1, $consumer_key='', $consumer_secret='', $token='', $token_secret='' ) {
 
@@ -186,7 +184,7 @@ Description: Bamboo Tweets provides a widget to display the latest tweets from y
 
 		}
 
-/******************************************************************/
+/**************************************************************************************************/
 
 		private function parseLinks( $str ) {
 
@@ -219,7 +217,7 @@ Description: Bamboo Tweets provides a widget to display the latest tweets from y
 
 		}
 
-/******************************************************************/
+/**************************************************************************************************/
 
 		public function get_tweets( $username='', $count=1, $consumer_key='', $consumer_secret='', $token='', $token_secret='' ) {
 
@@ -299,9 +297,9 @@ Description: Bamboo Tweets provides a widget to display the latest tweets from y
 
 		}
 
-/******************************************************************/
+/**************************************************************************************************/
 
 	}
 
-/******************************************************************/
+/**************************************************************************************************/
 ?>
